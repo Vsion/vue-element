@@ -1,7 +1,7 @@
 <template>
   <div class="modalSelect">
     <input @focus="onFocus" @click="toggleDialog" class="ms hhrms-source" v-model="input" :placeholder="placeholder" />
-    <el-dialog :close-on-click-modal="close_on_click_modal 	" :close-on-press-escape="close_on_press_escape" :modal-append-to-body="modal_append_to_body" title="提示" v-model="dialogVisible" :size="size">
+    <el-dialog :show-close="show_close" :close-on-click-modal="close_on_click_modal 	" :close-on-press-escape="close_on_press_escape" :modal-append-to-body="modal_append_to_body" title="提示" :visible.sync="dialogVisible" :size="size">
       <div class="top">
         <el-input class="searchInput" v-model="searchInput" placeholder="请输入内容"></el-input>
         <el-button class="searchBtn" @click="onClearClick">清除已选结果</el-button>
@@ -76,6 +76,7 @@ export default {
       panelClass: "panel",
       modal_append_to_body: false,
       close_on_click_modal: false,
+      show_close: false,
       close_on_press_escape: false,
       breadItems: [],
       isCheckAll: true,

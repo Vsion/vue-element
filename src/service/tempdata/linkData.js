@@ -1,4 +1,70 @@
-export default{
+
+let sample = {
+    dnBps: '64409',
+    dnBpsVv: "0.061",
+    dnByte: '2020094208000',
+    dnByteVv: "240813.995",
+    dnDisBps: '6343',
+    dnDisBpsVv: "0.006",
+    dnDisByte: '198953971200',
+    dnDisBytePct: '0.09848747172884326',
+    dnDisBytePctVv: "9.85",
+    dnDisByteVv: "23717.162",
+    dnMaxBps: '1790172566',
+    dnMaxBpsVv: "1707.242",
+    dnPassBps: '58066',
+    dnPassBpsVv: "0.055",
+    dnPassByte: '1821140236800',
+    dnPassBytePct: '0.9015125282711568',
+    dnPassBytePctVv: "90.15",
+    dnPassByteVv: "217096.834",
+    id: '31501',
+    name: "LinkId=31501",
+    totalBps: '158794',
+    totalBpsPct: '0.39414616226627713',
+    totalBpsPctVv: "39.41",
+    totalBpsVv: "0.151",
+    totalByte: '4980317011200',
+    totalBytePct: '0.39414616226627713',
+    totalBytePctVv: "39.41",
+    totalByteVv: "593700.053",
+    totalDisBps: '36318',
+    totalDisBpsVv: "0.035",
+    totalMaxBps: '4608532368',
+    totalMaxBpsVv: "4395.039",
+    totalPassBps: '122475',
+    totalPassBpsVv: "0.117",
+    upBps: '94385',
+    upBpsVv: "0.090",
+    upByte: '2960222803200',
+    upByteVv: "352886.057",
+    upDisBps: '29975',
+    upDisBpsVv: "0.029",
+    upDisByte: '940128422400',
+    upDisBytePct: '0.31758704830721574',
+    upDisBytePctVv: "31.76",
+    upDisByteVv: "112072.041",
+    upMaxBps: '2818359802',
+    upMaxBpsVv: "2687.797",
+    upPassBps: '64409',
+    upPassBpsVv: "0.061",
+    upPassByte: '2020094380800',
+    upPassBytePct: '0.6824129516927843',
+    upPassBytePctVv: "68.24",
+    upPassByteVv: "240814.016"
+}
+let list = []
+
+for (var i = 0; i < 100; i++) {
+  let o = Object.assign({},sample)
+  for (var key in o) {
+    o[key] += i+""
+  }
+  list.push(o)
+}
+
+export default {
+    list: list,
     data: [
         {
             dnBps: '64409',

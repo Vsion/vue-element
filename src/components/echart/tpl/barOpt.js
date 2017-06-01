@@ -1,5 +1,6 @@
 export default {
   tooltip: {},
+  grid: {right:60,left:60},
   legend: {
       data:['销量']
   },
@@ -11,5 +12,19 @@ export default {
       name: '销量',
       type: 'bar',
       data: [5, 20, 36, 10, 10, 20]
-  }]
+  }],
+  dataZoom: [
+        {
+            type: 'slider',
+            show: true,
+            end:20,
+            xAxisIndex: [0],
+        },
+        {
+            type: 'inside',
+            end:20,
+            xAxisIndex: [0],
+        }
+
+    ],
 }

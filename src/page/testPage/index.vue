@@ -1,5 +1,5 @@
 <template lang="html">
-  <app v-if="loaded"/>
+  <app/>
 </template>
 
 <script>
@@ -8,15 +8,12 @@ const app = r => require.ensure([], () => r(require('./app.vue')), 'app')
 export default {
   data() {
     return {
-      loaded: false
     };
   },
-  created() {
-    let _self = this;
-    setTimeout(function () {
-      _self.loaded = true;
-    },1000)
-  },
+  computed: {},
+  ready() {},
+  attached() {},
+  methods: {},
   components: {app}
 };
 </script>

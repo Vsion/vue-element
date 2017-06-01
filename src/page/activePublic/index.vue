@@ -8,11 +8,7 @@
       </el-steps>
 
       <transition name="fade">
-        <!-- <router-view class="view" name="step1"></router-view> -->
-        <step1 v-if="currStep == 1"/>
-        <step2 v-if="currStep == 2"/>
-        <step3 v-if="currStep == 3"/>
-        <step4 v-if="currStep == 4"/>
+        <component :is="'step'+currStep" />
       </transition>
 
         <div class="but-group">
@@ -25,7 +21,6 @@
 </template>
 
   <script>
-    import store from 'src/store.js'
     import $ from 'jquery'
     // import VueRouter from 'vue-router'
 

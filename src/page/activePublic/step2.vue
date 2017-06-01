@@ -166,7 +166,7 @@
     watch: {
       signForm: {
         handler: function () {
-          store.commit('setSignForm', this.signForm);
+          // store.commit('setSignForm', this.signForm);
         },
         deep: true
       }

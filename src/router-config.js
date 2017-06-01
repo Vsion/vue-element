@@ -1,30 +1,24 @@
-import App from './App.vue'
-const a = r => require.ensure([], () => r(require('./page/a/index.vue')), 'a')
-const b = r => require.ensure([], () => r(require('./page/b/index.vue')), 'b')
+import App from './App';
+import {isPro,baseUrl} from 'src/config/env.js'
+const main = r => require.ensure([], () => r(require('./page/main.vue')), 'main')
+const login = r => require.ensure([], () => r(require('./page/login.vue')), 'login')
 const NotFoundComponent = r => require.ensure([], () => r(require('./page/404.vue')), 'NotFoundComponent')
-const activePublic = r => require.ensure([], () => r(require('./page/activePublic/index.vue')), 'activePublic')
-const activeManage = r => require.ensure([], () => r(require('./page/activeManage/index.vue')), 'activeManage')
-const anaPage = r => require.ensure([], () => r(require('./page/anaPage/index.vue')), 'anaPage')
-const gridTest = r => require.ensure([], () => r(require('./page/gridTest/index.vue')), 'gridTest')
-const testMs = r => require.ensure([], () => r(require('./page/testMs/index.vue')), 'testMs')
 
 export default [
-  // {path: '*', component: NotFoundComponent },
+  // { path: '/', component: NotFoundComponent },
+  // { path: '/', redirect: to => {debugger;
+  //     // 方法接收 目标路由 作为参数
+  //     // return 重定向的 字符串路径/路径对象
+  //     return '/login';
+  //   } },
+  // {path: !isPro?'/':baseUrl.slice(0,baseUrl.length-1),
   {path: '/',
-    components: {
-        a,
-        b,
-        // activePublic,
-        // activeManage,
-        anaPage,
-        anaPage1: anaPage,
-        anaPage2: anaPage,
-        anaPage3: anaPage,
-        anaPage4: anaPage,
-        anaPage5: anaPage,
-        anaPage6: anaPage,
-        gridTest,
-        testMs,
-    }
-  }
+    component: App, //顶层路由，对应index.html
+    children:[
+      { path: '', component: login},
+      { path: 'index', component: main},
+    ]},
+  { path: '*', component: NotFoundComponent },
+  // { path: '/', component: login, name: 'login' },
+  // { path: '/index', component: main, name: 'index' },
 ]
